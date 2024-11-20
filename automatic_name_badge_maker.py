@@ -1,15 +1,3 @@
-"""To run this script in python:
-1. Create the csv file of attendees and call this 'attendee_list.csv'. Add in any info to the
-   'additional' column, e.g 'Plenary' or 'Committee'. Then check this csv carefully as some
-   bookings appear twice (could be an error in the ZSL system or they double booked?)
-2. Place in one folder: i) the RCUK logo and call this 'logo.PNG',  the 'attendee_list.csv', 
-   and this python script.
-3. Navigate to this folder
-4. Run with the command:
-   python automatic_name_badge_maker.py attendee_list.csv logo.PNG badges.docx
-5. A word doc will be created with the name badges. Check this carefully."""
-
-
 import csv
 from docx import Document
 from docx.shared import Inches, Pt, Cm, RGBColor
@@ -84,10 +72,11 @@ def create_name_badges(attendees, logo_path, output_docx):
         row_idx = (i % badges_per_page) // badges_per_row
         col_idx = (i % badges_per_page) % badges_per_row
 
+        # Create text cell and vertically align
         cell = table.cell(row_idx, col_idx)
         cell.vertical_alignment = WD_CELL_VERTICAL_ALIGNMENT.TOP
 
-        # Create a nested table within the cell
+        # Create a nested table within the text cell
         inner_table = cell.add_table(rows=1, cols=2)
         inner_table.autofit = False
 
