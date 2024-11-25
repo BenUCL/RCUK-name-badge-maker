@@ -14,8 +14,8 @@ This script generates a Word document with name badges based on an attendee list
 1. **Prepare the Attendee List**:
    - Create a CSV file named `attendee_list.csv` with attendee information.
    - Use the `additional` column to add extra details (e.g., "Plenary" or "Committee").
-   - Carefully review the CSV for duplicate bookings or errors. Notes on the ZSL system group bookings will all come through
-   on one line, seperated by semi-colons, do not fear, the script will handle these!
+   - Carefully review the CSV for duplicate bookings or errors. Note, on the ZSL system group bookings will all come through
+   on one line seperated by semi-colons, do not fear, the script will handle these!
 
 2. **Set Up the Folder**:
    - Place the following files in the same folder:
